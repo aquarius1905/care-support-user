@@ -1,6 +1,6 @@
 import { StatusBar, StyleSheet } from 'react-native';
 
-const UserListStyles = StyleSheet.create({
+const ScheduleStyles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f0f6ff',
@@ -26,4 +26,4 @@ const UserListStyles = StyleSheet.create({
   }
 });
 
-export default UserListStyles;
+export default ScheduleStyles;

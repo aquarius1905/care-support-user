@@ -2,10 +2,10 @@ import { ActivityIndicator, Alert, FlatList, SafeAreaView, Text, View } from 're
 import React, { useState } from 'react';
 
 import Header from '@/components/Header';
+import ScheduleStyles from '@/styles/ScheduleStyles';
 import TimePickerModal from '@/components/TimePickerModal';
 import { TransportUser } from '@/types';
 import TransportUserItem from '@/components/TransportUserItem';
-import UserListStyles from '@/styles/UserListStyles';
 import { router } from 'expo-router';
 import showToast from '@/utils/showToast';
 import { useAuth } from '@/contexts/AuthContext';
@@ -84,7 +84,7 @@ export default function Schedule() {
   };
 
   return (
-    <SafeAreaView style={UserListStyles.container}>
+    <SafeAreaView style={ScheduleStyles.container}>
       <Header 
         title="スケジュール" 
         showLogout={true}
@@ -92,11 +92,11 @@ export default function Schedule() {
       />
 
       {!isLoading && transportUsers.length === 0 && (
-        <Text style={UserListStyles.emptyMessage}>送迎対象者はいません</Text>
+        <Text style={ScheduleStyles.emptyMessage}>送迎対象者はいません</Text>
       )}
 
       {isLoading ? (
-        <View style={UserListStyles.loadingContainer}>
+        <View style={ScheduleStyles.loadingContainer}>
           <ActivityIndicator size="large" color="#447FFF" />
         </View>
       ) : (
@@ -109,7 +109,7 @@ export default function Schedule() {
             />
           )}
           keyExtractor={item => item.id.toString()}
-          contentContainerStyle={UserListStyles.list}
+          contentContainerStyle={ScheduleStyles.list}
           onRefresh={refreshTransportUsers}
           refreshing={isLoading}
         />
