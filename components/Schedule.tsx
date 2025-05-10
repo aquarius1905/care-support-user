@@ -92,7 +92,7 @@ export default function Schedule() {
       />
 
       {!isLoading && transportUsers.length === 0 && (
-        <Text style={ScheduleStyles.emptyMessage}>送迎対象者はいません</Text>
+        <Text style={ScheduleStyles.emptyMessage}>スケジュールはありません</Text>
       )}
 
       {isLoading ? (
